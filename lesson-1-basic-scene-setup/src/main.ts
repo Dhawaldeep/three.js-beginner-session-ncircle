@@ -13,6 +13,19 @@ const material = new THREE.MeshBasicMaterial({
 });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
+// cube.position.x = 1;
+// cube.position.y = 1;
+// cube.position.z = 1;
+// cube.position.set(1, 0, 0);
+
+// Axes Helper
+// const axesHelper = new THREE.AxesHelper();
+// scene.add(axesHelper);
+
+// Grid Helper
+// const gridHelper = new THREE.GridHelper();
+// scene.add(gridHelper);
+// gridHelper.position.y = -1;
 
 // Camera
 const sizes = {
@@ -20,8 +33,11 @@ const sizes = {
     height: window.innerHeight,
 };
 
-const camera = new THREE.PerspectiveCamera(75, sizes.width/sizes.height);
-camera.position.z = 3;
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
+camera.position.z = 2;
+// camera.position.y = 1.5;
+// camera.position.x = 1.5;
+// camera.lookAt(new THREE.Vector3());
 scene.add(camera);
 
 // Renderer
@@ -33,8 +49,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 renderer.render(scene, camera);
 
-window.addEventListener('resize', () =>
-{
+window.addEventListener('resize', () => {
     // Update sizes
     sizes.width = window.innerWidth;
     sizes.height = window.innerHeight;
