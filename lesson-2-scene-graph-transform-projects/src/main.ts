@@ -6,6 +6,11 @@ const canvas = document.querySelector("canvas.webgl")!;
 // Scene
 const scene = new THREE.Scene();
 
+// Box Group
+// const boxGroup = new THREE.Group();
+// scene.add(boxGroup);
+// boxGroup.position.y = 1;
+
 // Red Cube
 const geometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshBasicMaterial({
@@ -13,19 +18,36 @@ const material = new THREE.MeshBasicMaterial({
 });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
-// cube.position.x = 1;
-// cube.position.y = 1;
-// cube.position.z = 1;
-// cube.position.set(1, 0, 0);
+// cube.position.x = 2;
+// boxGroup.add(cube);
+
+// Green Cuboid
+// const cuboidMaterial = new THREE.MeshBasicMaterial({
+// 	color: 0x00ff00,
+// });
+// const cuboid = new THREE.Mesh(geometry, cuboidMaterial);
+// cuboid.scale.x = 2;
+// cuboid.scale.y = 1;
+// cuboid.scale.z = 1;
+// scene.add(cuboid);
+// boxGroup.add(cuboid);
+
+// Yellow Cube
+// const yellowCubeMaterial = new THREE.MeshBasicMaterial({
+// 	color: 0xffff00,
+// });
+// const yellowCube = new THREE.Mesh(geometry, yellowCubeMaterial);
+// yellowCube.position.x = -2;
+// boxGroup.add(yellowCube);
 
 // Axes Helper
-// const axesHelper = new THREE.AxesHelper();
-// scene.add(axesHelper);
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
 
 // Grid Helper
-// const gridHelper = new THREE.GridHelper();
-// scene.add(gridHelper);
-// gridHelper.position.y = -1;
+const gridHelper = new THREE.GridHelper();
+scene.add(gridHelper);
+gridHelper.position.y = -1;
 
 // Camera
 const sizes = {
@@ -35,9 +57,9 @@ const sizes = {
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
 camera.position.z = 2;
-// camera.position.y = 1.5;
+// camera.position.y = 1;
 // camera.position.x = 1.5;
-// camera.lookAt(new THREE.Vector3());
+camera.lookAt(new THREE.Vector3());
 scene.add(camera);
 
 // Renderer
