@@ -84,16 +84,3 @@ window.addEventListener('resize', () => {
 	renderer.setSize(sizes.width, sizes.height);
 	renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
-
-/**
- * Animate
- */
-const tick = () => {
-	// Render
-	renderer.render(scene, camera);
-
-	// Call tick again on the next frame
-	window.requestAnimationFrame(tick);
-}
-
-tick();
