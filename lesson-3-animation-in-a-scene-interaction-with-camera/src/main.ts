@@ -1,7 +1,8 @@
 import './style.css'
 
 import * as THREE from "three";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import gsap from 'gsap';
 
 const canvas = document.querySelector("canvas.webgl")!;
 
@@ -83,6 +84,28 @@ window.addEventListener('resize', () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
+/**
+ * Animation with GSAP
+ */
+// gsap.to(cube.position, {
+//   duration: 5,
+//   delay: 1,
+//   x: 3,
+// })
+// .then(() => {
+//   gsap.to(cube.position, {
+//     duration: 5,
+//     delay: 1,
+//     x: -3,
+//   })
+//   .then(() => {
+//     gsap.to(cube.position, {
+//       duration: 5,
+//       delay: 1,
+//       x: 0,
+//     })
+//   })
+// });
 
 
 /**

@@ -1,5 +1,5 @@
 {
-  "name": "lesson-3-animation-in-a-scene-interaction-with-camera",
+  "name": "lesson-4-geometry-material-mesh-texture",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,7 +14,6 @@
     "vite": "^4.4.0"
   },
   "dependencies": {
-    "gsap": "^3.12.2",
     "three": "^0.154.0"
   }
 }
